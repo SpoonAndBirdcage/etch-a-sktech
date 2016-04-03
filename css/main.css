@@ -1,3 +1,30 @@
 body {
   background-color: #fefefe;
 }
+
+.wrapper {
+  margin: auto;
+  width: 700px;
+  height: 700px;
+  padding: 40px;
+  background-color: #444;
+  border-radius: 5%;
+  clear: both;
+  box-shadow: 0px 0px 30px 2px #bbb, 0px 0px 10px 1px #222 inset;
+}
+
+.square {
+  display: block;
+  float: left;
+  width: 42.75px;
+  height: 42.75px;
+  margin: 0.5px;
+  border-radius: 10%;
+  background-color: #ddd;
+  box-shadow: 0px 0px 3px #aaa inset;
+}
+
+.highlighted {
+  background-color: #ffcb83;
+  box-shadow: 0px 0px 8px 0px #ff5555 inset;
+}
