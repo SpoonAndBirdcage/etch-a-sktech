@@ -59,25 +59,25 @@ body {
 }
 .tog-1:hover {
   background-color: #ffcb83;
-  box-shadow: 0 0 8px 1px #ff5555 inset, 0 0 3px 0 #ff4433;
+  box-shadow: 0 0 6px 1px #ff5555 inset, 0 0 3px 0 #ff4433;
 }
 .tog-2:hover {
   background-color: #99ebe6;
-  box-shadow: 0 0 8px 1px #1e8f66 inset, 0 0 3px 0 #1e7d44;
+  box-shadow: 0 0 6px 1px #1e8f66 inset, 0 0 3px 0 #1e7d44;
 }
 .tog-3:hover {
   background-color: #ec6fdf;
-  box-shadow: 0 0 8px 1px #f54242 inset, 0 0 3px 0 #f53121;
+  box-shadow: 0 0 6px 1px #f54242 inset, 0 0 3px 0 #f53121;
 }
 .tog-4:hover {
   background-color: #a8f992;
-  box-shadow: 0 0 8px 1px #94a3dd inset, 0 0 3px 0 #94a322;
+  box-shadow: 0 0 6px 1px #94a3dd inset, 0 0 3px 0 #94a322;
 }
 .square {
   display: block;
   float: left;
-  width: 20.875px;
-  height: 20.875px;
+  width: 9.9375px;
+  height: 9.9375px;
   margin: 0.5px;
   border-radius: 10%;
   background-color: #ddd;
@@ -85,19 +85,19 @@ body {
 }
 .yellow {
   background-color: #ffcb83;
-  box-shadow: 0 0 8px 1px #ff5555 inset, 0 0 3px 0 #ff4433;
+  box-shadow: 0 0 6px 1px #ff5555 inset, 0 0 3px 0 #ff4433;
 }
 .blue {
   background-color: #99ebe6;
-  box-shadow: 0 0 8px 1px #1e8f66 inset, 0 0 3px 0 #1e7d44;
+  box-shadow: 0 0 6px 1px #1e8f66 inset, 0 0 3px 0 #1e7d44;
 }
 .purple {
   background-color: #ec6fdf;
-  box-shadow: 0 0 8px 1px #f54242 inset, 0 0 3px 0 #f53121;
+  box-shadow: 0 0 6px 1px #f54242 inset, 0 0 3px 0 #f53121;
 }
 .green {
   background-color: #a8f992;
-  box-shadow: 0 0 8px 1px #94a3dd inset, 0 0 3px 0 #94a322;
+  box-shadow: 0 0 6px 1px #94a3dd inset, 0 0 3px 0 #94a322;
 }
 .clearfix:after {
   visibility: hidden;
