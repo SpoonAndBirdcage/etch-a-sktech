@@ -1,13 +1,16 @@
 $(document).ready(function() {
+  var btnBool = false;
+  console.log(btnBool);
   /* Used To Set Up Grid */
   function gridSetup() {
     var box_count = $('.grid-num').val();
     var box_face = ((700 / box_count) - 1) + 'px';
     for (var i = 0; i < box_count; i++) {
       for (var j = 0; j < box_count; j++) {
-        $('.wrapper').append('<div class="square" style="width:' + box_face + '; height: ' + box_face + ';"></div>');
+        $('.wrapper').append('<div class="square"></div>');
       }
     }
+    $('.square').css({'height': box_face, 'width': box_face});
     $('div').filter('.selected').click();
   }
   /* Used To Reset All Color Buttons */
@@ -28,6 +31,17 @@ $(document).ready(function() {
     $('.square').on('mouseenter', function() {
       $(this).addClass(initColor).removeClass(offColors);
     });
+    if( btnBool === true ) {
+    $('.square').on('mouseleave', function() {
+      $(this).removeClass(initColor, 300, 'easeOutQuad');
+    });
+    }
+  }
+  /* Used Fully Reset the Board */
+  function fullReset() {
+    btnReset();
+    $('.square').removeClass('yellow blue purple green');
+    $('div').filter('.selected').click();
   }
 
   /* The Yellow-Toggle Button */
@@ -51,17 +65,18 @@ $(document).ready(function() {
     colorSwitch('.tog-4', 'green', 'yellow blue purple');
   });
   /* The Reset Button */
-  $('.reset').on('click', function() {
+  $('.reset').on('click', function(e) {
+    e.preventDefault();
     btnReset();
     $('.square').removeClass('yellow blue purple green');
-    $('.tog-1').click();
+    $('div').filter('.selected').click();
   });
 
   $('.set-grid').on('click', function(e) {
     e.preventDefault();
     $('div.square').remove();
-    if ($('.grid-num').val() > 80) {
-      $('.grid-num').val(80);
+    if ($('.grid-num').val() > 64) {
+      $('.grid-num').val(64);
       gridSetup();
     } else if ($('.grid-num').val() < 5) {
       $('.grid-num').val(5);
@@ -69,6 +84,22 @@ $(document).ready(function() {
     } else {
       gridSetup();
     }
+  });
+
+  $('.trail').on('click', function(e) {
+      e.preventDefault();
+      btnBool = !btnBool;
+      $('div.square').remove();
+      gridSetup();
+      $('div').filter('.selected').click();
+
+      /*var trailsStyle = function() {
+  $("#sketchpad > div").hover(function() {
+    $(this).css("opacity", 0);
+  }, function() {
+    $(this).fadeTo(300, 1);
+  });
+}*/
   });
 
   /*
