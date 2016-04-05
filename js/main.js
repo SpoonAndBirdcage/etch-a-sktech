@@ -1,6 +1,5 @@
 $(document).ready(function() {
-  var btnBool = false;
-  console.log(btnBool);
+  var traceBool = false;
   /* Used To Set Up Grid */
   function gridSetup() {
     var box_count = $('.grid-num').val();
@@ -10,7 +9,10 @@ $(document).ready(function() {
         $('.wrapper').append('<div class="square"></div>');
       }
     }
-    $('.square').css({'height': box_face, 'width': box_face});
+    $('.square').css({
+      'height': box_face,
+      'width': box_face
+    });
     $('div').filter('.selected').click();
   }
   /* Used To Reset All Color Buttons */
@@ -31,17 +33,11 @@ $(document).ready(function() {
     $('.square').on('mouseenter', function() {
       $(this).addClass(initColor).removeClass(offColors);
     });
-    if( btnBool === true ) {
-    $('.square').on('mouseleave', function() {
-      $(this).removeClass(initColor, 300, 'easeOutQuad');
-    });
+    if (traceBool === true) {
+      $('.square').on('mouseleave', function() {
+        $(this).removeClass(initColor, 300, 'easeOutQuad');
+      });
     }
-  }
-  /* Used Fully Reset the Board */
-  function fullReset() {
-    btnReset();
-    $('.square').removeClass('yellow blue purple green');
-    $('div').filter('.selected').click();
   }
 
   /* The Yellow-Toggle Button */
@@ -87,23 +83,15 @@ $(document).ready(function() {
   });
 
   $('.trail').on('click', function(e) {
-      e.preventDefault();
-      btnBool = !btnBool;
-      $('div.square').remove();
-      gridSetup();
-      $('div').filter('.selected').click();
-
-      /*var trailsStyle = function() {
-  $("#sketchpad > div").hover(function() {
-    $(this).css("opacity", 0);
-  }, function() {
-    $(this).fadeTo(300, 1);
-  });
-}*/
+    e.preventDefault();
+    traceBool = !traceBool;
+    $('.square').remove();
+    gridSetup();
+    $('div').filter('.selected').click();
   });
 
-  /*
-    Setting Default Start on Load
-  */
-  gridSetup();
+    /*
+      Setting Default Start on Load
+    */
+    gridSetup();
 });
